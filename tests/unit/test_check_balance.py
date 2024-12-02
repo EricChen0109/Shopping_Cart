@@ -6,7 +6,7 @@ class TestShoppingCart(unittest.TestCase):
     def setUp(self):
         self.cart = ShoppingCart()
 
-     測試檢查餘額功能是否是否如同預期執行
+     #測試檢查餘額功能是否是否如同預期執行
      def test_check_balance(self):
          cart = self.cart
          self.assertEqual(cart.check_balance(100, 50), 50)
