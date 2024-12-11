@@ -52,11 +52,11 @@ class ShoppingCart:
 
     
     def delete_from_cart(self, product_id):
-        if product_id in self.shopping_cart :
-            # ** 為可變長度的字典參數，將會自動展開
-            item_remove = next((item for item in self.shopping_cart if item["id"] == product_id), None)
+        # 檢查是否存在該商品
+        item_remove = next((item for item in self.shopping_cart if item["id"] == product_id), None)
+        if item_remove:
             self.shopping_cart.remove(item_remove)
-            print(f"\n{item_to_remove['name']} 已從購物車移除。")
+            print(f"\n{item_remove['name']} 已從購物車移除。")
         else:
             print("\n無效的商品編號。")
 
