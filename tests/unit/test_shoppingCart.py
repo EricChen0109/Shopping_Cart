@@ -23,7 +23,7 @@ class TestShoppingCart(unittest.TestCase):
         self.assertEqual(actual_output, expected_output)
         self.assertEqual(cart.products[product_id]['name'], cart.shopping_cart[0]['name'])
 
-    def test_delete_from_cart(self):
+    def test_delete_from_cart(self, product_id):
         cart = self.cart
         product_id = 1
         
@@ -45,7 +45,7 @@ class TestShoppingCart(unittest.TestCase):
         # 確認商品已從購物車中移除
         self.assertNotIn({"id": product_id, **cart.products[product_id]}, cart.shopping_cart)
         
-    def test_delet_not_in (self):
+    def test_delet_not_in (self, product_id):
         cart = self.cart
         expected_output = f"\n無效的商品編號。"
         # 確保購物車為空
