@@ -45,8 +45,9 @@ class TestShoppingCart(unittest.TestCase):
         # 確認商品已從購物車中移除
         self.assertNotIn({"id": product_id, **cart.products[product_id]}, cart.shopping_cart)
         
-    def test_delet_not_in (self):
+    def test_delete_not_in (self, product_id):
         cart = self.cart
+        product_id = 9
         expected_output = f"\n無效的商品編號。"
         # 確保購物車為空
         cart.shopping_cart = []
