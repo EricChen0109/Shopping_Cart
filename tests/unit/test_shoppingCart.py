@@ -35,7 +35,7 @@ class TestShoppingCart(unittest.TestCase):
     
         # 重新導向 stdout 以捕獲 print 的輸出
         sys.stdout = StringIO()
-        cart.delete_from_cart(self, product_id)
+        cart.delete_from_cart(product_id)
         actual_output = sys.stdout.getvalue()
         sys.stdout = sys.__stdout__  # 重置 stdout
     
@@ -45,7 +45,7 @@ class TestShoppingCart(unittest.TestCase):
         # 確認商品已從購物車中移除
         self.assertNotIn({"id": product_id, **cart.products[product_id]}, cart.shopping_cart)
         
-    def test_delete_not_in (self, product_id):
+    def test_delete_not_in (self):
         cart = self.cart
         product_id = 9
         expected_output = f"\n無效的商品編號。"
@@ -53,7 +53,7 @@ class TestShoppingCart(unittest.TestCase):
         cart.shopping_cart = []
         # 重新導向 stdout 以捕獲 print 的輸出
         sys.stdout = StringIO()
-        cart.delete_from_cart(self, product_id)
+        cart.delete_from_cart(product_id)
         actual_output = sys.stdout.getvalue()
         sys.stdout = sys.__stdout__  # 重置 stdout
     
