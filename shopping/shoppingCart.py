@@ -50,6 +50,16 @@ class ShoppingCart:
         else:
             print("\n餘額不足")
 
+    
+    def delet_from_cart(self, product_id):
+        if product_id in self.shopping_cart :
+            # ** 為可變長度的字典參數，將會自動展開
+            item_remove = next((item for item in self.shopping_cart if item["id"] == product_id), None)
+            self.shopping_cart.remove(item_remove)
+            print(f"\n{item_to_remove['name']} 已從購物車移除。")
+        else:
+            print("\n無效的商品編號。")
+
 if __name__ == '__main__':
     cart = ShoppingCart()
 
