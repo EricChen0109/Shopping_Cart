@@ -48,7 +48,7 @@ class TestShoppingCart(unittest.TestCase):
     def test_delete_not_in (self):
         cart = self.cart
         product_id = 9
-        expected_output = f"\n無效的商品編號。"
+        expected_output = "\n無效的商品編號。\n"
         # 確保購物車為空
         cart.shopping_cart = []
         # 重新導向 stdout 以捕獲 print 的輸出
